@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f7f6;
@@ -109,4 +114,95 @@ th {
     background-color: #d4edda;
     font-weight: bold;
     color: #155724;
+}
+@media (max-width: 992px) {
+
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Tombol dan Input tetap rapi */
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        background-color: white;
+        
+        /* 🔥 KUNCI PENTING UNTUK SCROLL HORIZONTAL */
+        display: block; 
+        overflow-x: auto;
+    }
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+
+    /* Form Group menjadi tumpukan vertikal */
+    .form-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    /* Tombol dan Input mengambil lebar penuh */
+    input[type="text"], input[type="number"], select, .btn {
+        width: 100%;
+        box-sizing: border-box; /* Memastikan padding tidak melebihi lebar 100% */
+    }
+    
+    /* Tabel akan mengandalkan overflow-x: auto untuk scroll horizontal */
+    th, td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    
+    /* Keterangan header yang mungkin terlalu panjang dipersingkat */
+    h1 {
+        font-size: 1.5em;
+    }
+}
+/* Penyesuaian khusus untuk layar sangat kecil (misalnya 368px) */
+@media (max-width: 400px) {
+    /* Mengurangi padding body dan container agar konten memiliki lebih banyak ruang */
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+
+    /* Mengurangi ukuran font header agar tidak memakan terlalu banyak tempat */
+    h1 {
+        font-size: 1.4em;
+    }
+    
+    h2 {
+        font-size: 1.2em;
+    }
+
+    /* Mengurangi padding pada kartu dan input */
+    .card {
+        padding: 10px;
+    }
+    
+    .btn, input[type="text"], input[type="number"], select {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    /* Mengurangi padding di dalam sel tabel (th, td) */
+    th, td {
+        padding: 6px;
+        min-width: 80px; /* Menurunkan minimum lebar kolom */
+    }
 }
