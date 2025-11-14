@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPK MOORA - Pemilihan Laptop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistem Pendukung Keputusan (SPK) MOORA</h1>
+        <p>Studi Kasus: Pemilihan Laptop Terbaik</p>
+
+        <section class="card">
+            <h2>1. Kriteria & Bobot</h2>
+            <div id="criteria-form">
+                <p>Masukkan kriteria, bobot, dan jenis (Benefit/Cost).</p>
+                <button onclick="addCriterion()" class="btn btn-primary">Tambah Kriteria Baru</button>
+            </div>
+            
+            <table id="criteria-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Kriteria</th>
+                        <th>Bobot (%)</th>
+                        <th>Jenis</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>2. Alternatif Keputusan</h2>
+            <div class="form-group">
+                <input type="text" id="alt-name" placeholder="Nama Alternatif (cth: Laptop A)">
+                <button onclick="addAlternative()" class="btn btn-primary">Tambah Alternatif</button>
+            </div>
+            <table id="alternatives-list">
+                <thead>
+                    <tr>
+                        <th>Nama Alternatif</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+        
+        <section class="card" id="matrix-section" style="display:none;">
+            <h2>3. Input Nilai Matriks Keputusan</h2>
+            <p>Masukkan nilai/skor setiap alternatif terhadap setiap kriteria.</p>
+            <table id="decision-matrix-table">
+                <thead>
+                    <tr>
+                        <th>Alternatif</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <button onclick="runMooraCalculation()" class="btn btn-success mt-15">HITUNG PERANGKINGAN MOORA</button>
+        </section>
+
+        <section class="card" id="results-section" style="display:none;">
+            <h2>4. Hasil Perangkingan Akhir</h2>
+            <table id="ranking-results">
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Alternatif</th>
+                        <th>Total Benefit (Σ V_Benefit)</th>
+                        <th>Total Cost (Σ V_Cost)</th>
+                        <th>Nilai Optimasi (Y_i)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
